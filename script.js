@@ -120,9 +120,6 @@ do{
     } else if (opcion == 2){
         let totalCarrito = carrito.reduce((acumulador, carrito) => acumulador + carrito.precio, 0)
         alert("La cotización final de su placard es de: " + totalCarrito)
-    } else if (opcion == 3){
-
-
     }
 
 }while (opcion !== 0)
