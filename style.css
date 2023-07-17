@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 4px;
+  }
+  
+  #contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .tarjetaProducto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid black 1px;
+    border-radius: 2px;
+  }
+
+.imagenes-carrusel {
+    width: 1000px;
+    height: 500px;
+    object-fit: cover;
+}
+
+#carouselExampleIndicators{
+    align-items: center;
+    justify-content: center;
+}
+
+.encabezado-carrito {
+    font-size: 20px;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    align-content: center;
+    
+}
+
+
+  .navbar-brand{
+    font-size: 22px;
+  }
+  
+  .imagen {
+    width: 200px;
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .miClase {
+    background-color: blueviolet;
+  }
+  
+  #botoncarrito{
+    color: black;
+    text-decoration-color: aliceblue;
+
+  }
+  
+  #carrito {
+    border: 1px solid black;
+    width: 600px;
+    height: 400px;
+    font-size: 20px;
+  }
+  
+  .oculto {
+    display: none;
+  }
+  
+  .elementoDelCarrito, #encabezadoCarrito {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -1,136 +1,101 @@
-console.log("HOLA")
-
-alert("¡Bienvenidos a Imagen Amoblamientos!")
-
-let placardFinal = {}
-
-placardFinal.tipoDePlacard = Number(prompt("Selecione el tipo de placard, hay opción 1 o 2:\n 1 Placard con Frente\n 2 Placard con puerta de abrir \n 3 Interior de Placard solo"))
-
-placardFinal.anchoDePlacard = Number(prompt("Por favor ingrese el ANCHO total del Placard deseado. Trabajamos hasta 2200mm."))
-
-if ((placardFinal.anchoDePlacard) >= 1 && (placardFinal.anchoDePlacard) <= 2200){
-    alert("El ancho indicado es "+ (placardFinal.anchoDePlacard))
-}else{
-    while (placardFinal.anchoDePlacard=isNaN("") || placardFinal.anchoDePlacard > 2200 || placardFinal.anchoDePlacard < 0 ) {
-        anchoDePlacard= Number(prompt("El número ingresado no es válido. Por favor ingrese solo números o un ancho total dentro de los permitidos"))
-    }
-}
-
-placardFinal.altoDePlacard = Number(prompt("Por favor ingrese el ALTO total del Placard deseado. Trabajamos hasta desde 1000 a 2650mm."))
-
-if ((placardFinal.altoDePlacard) >= 1 && (placardFinal.altoDePlacard) <= 2650){
-    alert("El ALTO indicado es "+ (placardFinal.altoDePlacard))
-}else{
-    while ((placardFinal.altoDePlacard)=isNaN("") || (placardFinal.altoDePlacard) > 2650 || (placardFinal.altoDePlacard) < 1000 ) {
-        (placardFinal.altoDePlacard)= Number(prompt("El número ingresado no es válido. Por favor ingrese solo números o un ancho total dentro de los permitidos"))
-    }
-}
-
-alert("Todos nuestros placards se distribuyen de la misma manera. Cuentan con dos cajones, sector para colgar y estantes sobre la cajonera.")
-
-
-placardFinal.precioFrenteDePlacard = 0
-
-if(placardFinal.tipoDePlacard == 1){
-    if((placardFinal.anchoDePlacard) <= 1200){
-        (placardFinal.precioFrenteDePlacard) = 50000
-        alert("El valor del frente de su placard es $100.000-")
-    }else if ((placardFinal.anchoDePlacard) > 1201 && (placardFinal.anchoDePlacard) <= 2650){
-        (placardFinal.precioFrenteDePlacard) = 100000
-        alert("El valor del frente de su placard es $150.000-")
-    }
-} else if(placardFinal.tipoDePlacard == 2){
-    if((placardFinal.anchoDePlacard) <= 1200){
-        (placardFinal.precioFrenteDePlacard) = 50000
-        alert("El valor del frente de su placard es $50.000-")
-    }else if ((placardFinal.anchoDePlacard) > 1201 && (placardFinal.anchoDePlacard) <= 2650){
-        (placardFinal.precioFrenteDePlacard) = 100000
-        alert("El valor del frente de su placard es $100.000-")
-    }
-}else{
-    (placardFinal.precioFrenteDePlacard) = 0
-    alert("Su Placard no lleva frente.")
-}
-
-placardFinal.precioInteriorPlacard = 0
-
-if ((placardFinal.anchoDePlacard) <= 500 && (placardFinal.altoDePlacard) <= 1000){
-    (placardFinal.precioInteriorPlacard)= 30000
-    alert("El valor de su interior de placard es:"+ precioInteriorPlacard)
-}else if (((placardFinal.anchoDePlacard) >= 501 && (placardFinal.anchoDePlacard) <= 1700) && (placardFinal.altoDePlacard) <= 2000){
-    (placardFinal.precioInteriorPlacard)= 75000
-    alert("El valor de su interior de placard es:"+ precioInteriorPlacard)
-}else if(((placardFinal.anchoDePlacard) >= 1701 && (placardFinal.anchoDePlacard) <= 2200) && (placardFinal.altoDePlacard) <= 2650){
-    (placardFinal.precioInteriorPlacard)= 100000
-    alert("El valor de su interior de placard es:"+ (placardFinal.precioInteriorPlacard))
-}
-
-placardFinal.cajonesCierraSuave = prompt("Indique si quiere cajones cierra suave, solo pueden modificarse los dos que ya vienen incluidos\nIndique por Si o por No\nCada uno tiene un valor adicional de $10.000-")
-
-let agregadoCierraSuave = {}
-
-
-if ((placardFinal.cajonesCierraSuave) == "si"){
-    (agregadoCierraSuave.precio)= 20000
-    alert("El valor de sus cajones Cierra Suave es de "+ agregadoCierraSuave.precio)
-}else if ((placardFinal.cajonesCierraSuave) == "no"){
-    (agregadoCierraSuave.precio)= 0
-    alert("Ha seleccionado continuar con nuestros cajones clásicos.")
-}else {
-    while ((placardFinal.cajonesCierraSuave) == isNan(" ") || (placardFinal.cajonesCierraSuave) != isNan("no") || (placardFinal.cajonesCierraSuave) != isNan("si")) {
-        placardFinal.cajonesCierraSuave = prompt(prompt("El número ingresado no es válido. Por favor ingrese solo las opciones si o no"))
-    }
-}
-
-
-placardFinal.Manijas = prompt("Indique si quiere agregar manijas cromadas, solo pueden modificarse los dos que ya vienen incluidos\nIndique por Si o por No\nCada uno tiene un valor adicional de $1.000-")
-
-let Manijas = {}
-
-
-if ((placardFinal.Manijas) == "si"){
-    (Manijas.precio)= 2000
-    alert("El valor de sus cajones Cierra Suave es de "+ Manijas.precio)
-}else if ((placardFinal.Manijas) == "no"){
-    (Manijas.precio)= 0
-    alert("Ha seleccionado continuar con nuestros cajones clásicos.")
-}else {
-    while ((placardFinal.Manijas) == isNan("") || (placardFinal.Manijas) != isNan("no") || (placardFinal.Manijas) != isNan("si") ) {
-        placardFinal.Manijas = prompt(prompt("El número ingresado no es válido. Por favor ingrese solo las opciones si o no"))
-    }
-}
-
-
-const carrito = [];
-carrito.push( {producto: "Interior de placard", precio: (placardFinal.precioInteriorPlacard)})
-carrito.push( {producto: "Frente de placard", precio:  (placardFinal.precioFrenteDePlacard)})
-carrito.push( {producto: "Agregado de cierra suave", precio: (agregadoCierraSuave.precio)})
-carrito.push( {producto: "Agregado de manijas", precio: (Manijas.precio)})
-
-console.log(carrito)
-
-let mensaje = "1 Ver carrito\n2 Finalizar cotización y ver total"
-
-let opcion
-
-do{
-    opcion = Number(prompt(mensaje))
-    if (opcion == 1){
-        listar(carrito)
-    } else if (opcion == 2){
-        let totalCarrito = carrito.reduce((acumulador, carrito) => acumulador + carrito.precio, 0)
-        alert("La cotización final de su placard es de: " + totalCarrito)
-    }
-
-}while (opcion !== 0)
-
-function listar(carrito){
-    let listado
-    carrito.forEach(element => {
-        listado = listado + element.producto + " " + element.precio + "\n"
+function programaImagenAmoblamientos() {
+    let productos = [
+      { id: 1, nombre: "Placard Blanco", precio: 5000, rutaImagen: "../img/placard-1.jpg", descripcion: "Placard standard. 18mm de espesor, solo en blanco." },
+      { id: 2, nombre: "Placard Color", precio: 5000, rutaImagen: "../img/placards-2-negro.jpg", descripcion: "Placard con cualquier color a elecciónm. 18mm de espesor." },
+      { id: 3, nombre: "Cocina Standard", precio: 10000, rutaImagen: "../img/cocina-new-1", descripcion: "Cocinas standard, pequeñas con modulación básica." },
+      { id: 4, nombre: "Cocina New Age", precio: 15000, rutaImagen: "../img/cocina-new-2.jpg", descripcion: "Cocinas modernas, enfocadas en el diseño." },
+      { id: 5, nombre: "Cocina Clasica", precio: 15000, rutaImagen: "../img/cocina-clasico-1.jpg", descripcion: "Cocinas antiguas, enfoque en el ambiente y sus materiales." },
+    ]
+    
+    let carritoJSON = JSON.parse(localStorage.getItem("carrito"))
+    let carrito = carritoJSON ? carritoJSON : []
+    
+    let contenedor = document.getElementById("contenedor")
+    renderizar(productos, contenedor, carrito)
+    renderizarCarrito(carrito)
+  
+    let botonFinalizarCompra = document.getElementById("finalizarCompra")
+    botonFinalizarCompra.addEventListener("click", () => finalizarCompra(carrito))
+  }
+  
+  programaImagenAmoblamientos()
+  
+  function finalizarCompra(carrito) {
+    let carritoFisico = document.getElementById("carrito")
+    carritoFisico.innerHTML = ""
+    localStorage.removeItem("carrito")
+    carrito = []
+    renderizarCarrito([])
+  }
+  
+  
+  function renderizar(arrayDeElementos, contenedor, carrito) {
+  
+    contenedor.innerHTML = ""
+  
+    arrayDeElementos.forEach(({ nombre, rutaImagen, id, descripcion }) => {
+      let tarjetaProducto = document.createElement("div")
+  
+      tarjetaProducto.classList.add("tarjetaProducto")
+      tarjetaProducto.innerHTML = `
+            <h2>${nombre}</h2>
+            <div class=imagen style="background-image: url(./images/${rutaImagen})"></div>
+            <p>${descripcion}</p>
+            <button id=${id}>Solicitar Cotizacion</button> 
+      `
+      contenedor.appendChild(tarjetaProducto)
+      let botonAgregarAlCarrito = document.getElementById(id)
+      botonAgregarAlCarrito.addEventListener("click", () => agregarAlCarrito(arrayDeElementos, id, carrito))
     })
-    alert(listado)
-}
-
-
-alert("Gracias por visitar nuestro cotizador online. Cualquier consulta comuníquese con Imagen Amoblamientos!") 
+  }
+  
+  function agregarAlCarrito(arrayDeElementos, id, carrito) {
+    let productoBuscado = arrayDeElementos.find(producto => producto.id === id)
+    let posicionProductoEnCarrito = carrito.findIndex(producto => producto.id === id)
+  
+    if (posicionProductoEnCarrito !== -1) {
+      carrito[posicionProductoEnCarrito].unidades++
+      carrito[posicionProductoEnCarrito].subtotal = carrito[posicionProductoEnCarrito].unidades * carrito[posicionProductoEnCarrito].precioUnitario
+    } else {
+      carrito.push({
+        id: productoBuscado.id,
+        nombre: productoBuscado.nombre,
+        precioUnitario: productoBuscado.precio,
+        unidades: 1,
+      })
+    }
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    renderizarCarrito(carrito)
+  }
+  
+  function renderizarCarrito(carritoJSON) {
+    let carritoFisico = document.getElementById("carrito")
+    carritoFisico.innerHTML = `
+      <div id=encabezadoCarrito class="encabezado-carrito">
+        <p>Nombre</p>
+        <p>Precio</p> 
+      </div>
+    `
+  
+    carritoJSON.forEach(({ nombre, precioUnitario}) => {
+      let elementoDelCarrito = document.createElement("div")
+      elementoDelCarrito.classList.add("elementoDelCarrito")
+      elementoDelCarrito.innerHTML = `
+        <p>${nombre}</p>
+        <p>${precioUnitario}</p>
+      `
+      carritoFisico.appendChild(elementoDelCarrito)
+    })
+  }
+  
+  let botonCarrito = document.getElementById("botonCarrito")
+  botonCarrito.addEventListener("click", mostrarOcultar)
+  
+  function mostrarOcultar() {
+    let padreContenedor = document.getElementById("productos")
+    let carrito = document.getElementById("contenedorCarrito")
+    padreContenedor.classList.toggle("oculto")
+    carrito.classList.toggle("oculto")
+  }
+  
+  
