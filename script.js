@@ -45,10 +45,22 @@ function programaImagenAmoblamientos() {
       `
       contenedor.appendChild(tarjetaProducto)
       let botonAgregarAlCarrito = document.getElementById(id)
-      botonAgregarAlCarrito.addEventListener("click", () => agregarAlCarrito(arrayDeElementos, id, carrito))
+      botonAgregarAlCarrito.addEventListener("click", () => agregarAlCarrito(arrayDeElementos, id, carrito, ))
+      botonAgregarAlCarrito.addEventListener("click", () => lanzarAgregado())
     })
   }
-  
+
+  function lanzarAgregado() {
+    Toastify({
+      text: "Solicitud Agregada",
+      className: "info",
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      }
+    }).showToast()
+
+  }
+
   function agregarAlCarrito(arrayDeElementos, id, carrito) {
     let productoBuscado = arrayDeElementos.find(producto => producto.id === id)
     let posicionProductoEnCarrito = carrito.findIndex(producto => producto.id === id)
@@ -109,7 +121,7 @@ function programaImagenAmoblamientos() {
       .then(data => {
         const card = document.createElement("div")
         card.classList.add("cotizador")
-        card.innerHTML = `<h2>${data.cotizacion}</h2>`
+        card.innerHTML = `<h2>Compra: ${data.compra}</h2><h2>Venta: ${data.venta}</h2>`
         container.appendChild(card) 
       })
     }    
