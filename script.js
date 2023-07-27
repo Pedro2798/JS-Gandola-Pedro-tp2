@@ -99,3 +99,19 @@ function programaImagenAmoblamientos() {
   }
   
   
+  
+  const container = document.getElementById("cotizacionRucula")
+  const urlLocal = "../db.json"
+
+  const cotizar = (compra, venta) => {
+    fetch(urlLocal)
+      .then(response => response.json())
+      .then(data => {
+        const card = document.createElement("div")
+        card.classList.add("cotizador")
+        card.innerHTML = `<h2>${data.cotizacion}</h2>`
+        container.appendChild(card) 
+      })
+    }    
+          
+cotizar("compra" , "venta")

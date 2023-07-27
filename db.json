@@ -1,0 +1,12 @@
+{
+    "rucula": [
+        {
+            "valor": 530,
+            "cotizacion": "venta"
+        },
+        {
+            "valor":525,
+            "cotizacion": "compra"
+        }
+    ]
+}
